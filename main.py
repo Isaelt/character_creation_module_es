@@ -1,7 +1,10 @@
 from random import randint
 
+from graphic_arts.start_game_banner import run_screensaver
+
 
 def attack(char_name: str, char_class: str) -> str:
+    """Establece el ataque al enemigo."""
     if char_class == 'guerrero':
         return (f'{char_name} causó {5 + randint(3, 5)} de daño al enemigo')
     if char_class == 'mago':
@@ -12,6 +15,7 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defense(char_name: str, char_class: str) -> str:
+    """Establece la defensa."""
     if char_class == 'guerrero':
         return (f'{char_name} bloqueó {10 + randint(5, 10)} de daño')
     if char_class == 'mago':
@@ -22,6 +26,7 @@ def defense(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Establece la habilidad."""
     if char_class == 'guerrero':
         return (f'{char_name} usó una habilidad especial "Aguante {80 + 25}"')
     if char_class == 'mago':
@@ -32,6 +37,7 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Inicia el entrenamiento."""
     if char_class == 'warrior':
         print(f'{char_name}, eres un Guerrero, experto en combate cuerpo a'
               ' cuerpo.')
@@ -58,6 +64,7 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class():
+    """Recibe la clase de personaje."""
     approve_choice = None
     char_class = None
     while approve_choice != 'y':
@@ -78,17 +85,16 @@ def choice_char_class():
     return char_class
 
 
-def main():
+if __name__ == '__main__':
+    """Recibe el nombre del jugador."""
+    run_screensaver()
     print('¡Saludos, aventurero!')
     print('Antes de comenzar a jugar...')
-    char_name = input('... indica tu nombre: ')
+    char_name: str = input('... indica tu nombre: ')
     print(f'¡Bienvenido, {char_name}! '
           'Tienes 80 puntos de aguante, 5 puntos de ataque,'
-          ' y 10 puntos de defensa.')
+          'y 10 puntos de defensa.')
     print('Puedes elegir una de las tres maneras de la Fuerza:')
     print('Guerrero, Mago, Sanador')
-    char_class = choice_char_class()
+    char_class: str = choice_char_class()
     print(start_training(char_name, char_class))
-
-
-main()
