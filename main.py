@@ -1,7 +1,7 @@
 from random import randint
 
 
-def attack(char_name, char_class):
+def attack(char_name: str, char_class: str) -> str:
     if char_class == 'guerrero':
         return (f'{char_name} causó {5 + randint(3, 5)} de daño al enemigo')
     if char_class == 'mago':
@@ -11,7 +11,7 @@ def attack(char_name, char_class):
     return (f'{char_name} no usó una habilidad especial')
 
 
-def defense(char_name, char_class):
+def defense(char_name: str, char_class: str) -> str:
     if char_class == 'guerrero':
         return (f'{char_name} bloqueó {10 + randint(5, 10)} de daño')
     if char_class == 'mago':
@@ -21,7 +21,7 @@ def defense(char_name, char_class):
     return (f'{char_name} no usó una habilidad especial')
 
 
-def special(char_name, char_class):
+def special(char_name: str, char_class: str) -> str:
     if char_class == 'guerrero':
         return (f'{char_name} usó una habilidad especial "Aguante {80 + 25}"')
     if char_class == 'mago':
@@ -31,7 +31,7 @@ def special(char_name, char_class):
     return (f'{char_name} no usó una habilidad especial')
 
 
-def start_training(char_name, char_class):
+def start_training(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
         print(f'{char_name}, eres un Guerrero, experto en combate cuerpo a'
               ' cuerpo.')
